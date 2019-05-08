@@ -35,8 +35,10 @@
 #'   argument \code{collapse} may be passed through \code{...} that names the character(s) to use in 
 #'   appending different text elements together.}
 #'   \item{\code{pdf}}{pdf formatted files, converted through \pkg{pdftools}.}  
+#'   \item{\code{odt}}{Open Document Text formatted files.}
 #'   \item{\code{doc, docx}}{Microsoft Word formatted files.}
-#'   
+#'   \item{\code{rtf}}{Rich Text Files.}
+#'      
 #'   \strong{Reading multiple files and file types:} 
 #'   
 #'   In addition, \code{file} can also not be a path 
@@ -103,48 +105,49 @@
 #' @examples 
 #' \donttest{
 #' ## get the data directory
+#' if (!interactive()) pkgload::load_all()
 #' DATA_DIR <- system.file("extdata/", package = "readtext")
 #' 
 #' ## read in some text data
 #' # all UDHR files
-#' (rt1 <- readtext(paste0(DATA_DIR, "txt/UDHR/*")))
+#' (rt1 <- readtext(paste0(DATA_DIR, "/txt/UDHR/*")))
 #' 
 #' # manifestos with docvars from filenames
-#' (rt2 <- readtext(paste0(DATA_DIR, "txt/EU_manifestos/*.txt"),
+#' (rt2 <- readtext(paste0(DATA_DIR, "/txt/EU_manifestos/*.txt"),
 #'                  docvarsfrom = "filenames", 
 #'                  docvarnames = c("unit", "context", "year", "language", "party"),
 #'                  encoding = "LATIN1"))
 #'                  
 #' # recurse through subdirectories
-#' (rt3 <- readtext(paste0(DATA_DIR, "txt/movie_reviews/*"), 
+#' (rt3 <- readtext(paste0(DATA_DIR, "/txt/movie_reviews/*"), 
 #'                  docvarsfrom = "filepaths", docvarnames = "sentiment"))
 #' 
 #' ## read in csv data
-#' (rt4 <- readtext(paste0(DATA_DIR, "csv/inaugCorpus.csv")))
+#' (rt4 <- readtext(paste0(DATA_DIR, "/csv/inaugCorpus.csv")))
 #' 
 #' ## read in tab-separated data
-#' (rt5 <- readtext(paste0(DATA_DIR, "tsv/dailsample.tsv"), text_field = "speech"))
+#' (rt5 <- readtext(paste0(DATA_DIR, "/tsv/dailsample.tsv"), text_field = "speech"))
 #' 
 #' ## read in JSON data
-#' (rt6 <- readtext(paste0(DATA_DIR, "json/inaugural_sample.json"), text_field = "texts"))
+#' (rt6 <- readtext(paste0(DATA_DIR, "/json/inaugural_sample.json"), text_field = "texts"))
 #' 
 #' ## read in pdf data
 #' # UNHDR
-#' (rt7 <- readtext(paste0(DATA_DIR, "pdf/UDHR/*.pdf"), 
+#' (rt7 <- readtext(paste0(DATA_DIR, "/pdf/UDHR/*.pdf"), 
 #'                  docvarsfrom = "filenames", 
 #'                  docvarnames = c("document", "language")))
 #' Encoding(rt7$text)
 #'
 #' ## read in Word data (.doc)
-#' (rt8 <- readtext(paste0(DATA_DIR, "word/*.doc")))
+#' (rt8 <- readtext(paste0(DATA_DIR, "/word/*.doc")))
 #' Encoding(rt8$text)
 #'
 #' ## read in Word data (.docx)
-#' (rt9 <- readtext(paste0(DATA_DIR, "word/*.docx")))
+#' (rt9 <- readtext(paste0(DATA_DIR, "/word/*.docx")))
 #' Encoding(rt9$text)
 #'
 #' ## use elements of path and filename as docvars
-#' (rt10 <- readtext(paste0(DATA_DIR, "pdf/UDHR/*.pdf"), 
+#' (rt10 <- readtext(paste0(DATA_DIR, "/pdf/UDHR/*.pdf"), 
 #'                   docvarsfrom = "filepaths", dvsep = "[/_.]"))
 #' }
 readtext <- function(file, ignore_missing_files = FALSE, text_field = NULL,
@@ -264,8 +267,10 @@ get_source <- function(path, text_field, replace_specialchar = FALSE, verbosity 
                xml = get_xml(path, text_field, verbosity = verbosity, ...), 
                html = get_html(path, verbosity = verbosity, ...),
                pdf = get_pdf(path, ...),
+               odt = get_odt(path, ...),
                docx = get_docx(path, ...),
                doc = get_doc(path, ...),
+               rtf = get_rtf(path, ...),
                xls = get_excel(path, text_field, ...),
                xlsx = get_excel(path, text_field, ...),
                ods = get_ods(path, text_field, ...)

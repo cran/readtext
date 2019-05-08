@@ -1,7 +1,7 @@
 # Returns supported file extensions
 extensions <- function() {
-    c("csv", "txt", "json", "zip", "gz", "tar", "xml", "tab",
-      "tsv", "html", "pdf", "docx", "doc", "xls", "xlsx", "ods")
+    c("csv", "txt", "json", "zip", "gz", "tar", "xml", "tab", "rtf",
+      "tsv", "html", "pdf", "odt", "docx", "doc", "xls", "xlsx", "ods")
 }
 
 ## from the tools package
@@ -43,9 +43,12 @@ get_docvars_filenames <- function(path, dvsep = "_", docvarnames = NULL,
 #' Get path to temporary file or directory
 #' 
 #' @param prefix a string appended to random file or directory names.
-#' @param temp_dir a path to temporary directory. If \code{NULL}, value from \code{tempdir()} will be used.
-#' @param directory If \code{TRUE}, temporary directory wil be created.
-#' @param seed  a seed value for \code{digest::digest}. If code{NULL}, a random value will be used.
+#' @param temp_dir a path to temporary directory. If \code{NULL}, value from
+#'   \code{tempdir()} will be used.
+#' @param directory logical; if \code{TRUE}, temporary directory will be
+#'   created.
+#' @param seed  a seed value for \code{digest::digest}. If code{NULL}, a random
+#'   value will be used.
 #' @keywords internal
 get_temp <- function(prefix = "readtext-", temp_dir = NULL, directory = FALSE, seed = NULL) {
     if (is.null(temp_dir))
@@ -157,7 +160,7 @@ list_file <- function(file, ignore_missing, last_round, cache, verbosity = 1) {
         return(file)
     } else {
         #  If it wasn't a glob pattern last time, then it may be this time
-        if (verbosity >= 3) message(", usigit glob pattern")
+        if (verbosity >= 3) message(", using glob pattern")
         file <- Sys.glob(file)
         return(
             list_files(file, ignore_missing, TRUE, verbosity)
@@ -172,7 +175,7 @@ extract_archive <- function(file, ignore_missing) {
 
     path <- get_temp(directory = TRUE)
     ext <- tools::file_ext(file)
-    if (ext %in% c("zip", "docx")) {
+    if (ext %in% c("zip", "docx", "odt")) {
         utils::unzip(file, exdir = path)
     } else if (ext %in% c("gz", "tar", "bz")) {
         utils::untar(file, exdir = path)
@@ -319,7 +322,7 @@ sort_fields <- function(x, path, text_field, impute_types = TRUE) {
             stop(sprintf("There is more than one field called %s in file %s.", text_field, path))
         }
     }
-    x <- x[, c(index[flag], index[!flag])]
+    x <- x[, c(index[flag], index[!flag]), drop = FALSE]
     names(x)[1] <- "text"
     if (impute_types) {
         return(impute_types(x))

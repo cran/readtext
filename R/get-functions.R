@@ -21,7 +21,7 @@ get_csv <- function(path, text_field, encoding, source, ...) {
         close(con)
         result <- data.table::fread(input = txt, data.table = FALSE, stringsAsFactors = FALSE, ...)
     } else {
-        result <- data.table::fread(input = path, data.table = FALSE, stringsAsFactors = FALSE, ...)
+        result <- data.table::fread(input = path, data.table = FALSE, stringsAsFactors = FALSE, encoding = encoding, ...)
     }
     sort_fields(result, path, text_field)
 }
@@ -170,6 +170,20 @@ get_pdf <- function(path, source, ...) {
     data.frame(text = txt, stringsAsFactors = FALSE)
 }
 
+get_odt <- function(path, source, ...) {
+	path <- extract_archive(path, ignore_missing = FALSE)
+	path <- sub("/\\*$", "", path)
+	path <- file.path(path, "content.xml")
+	
+	xml <- xml2::read_xml(path)
+	txt <- xml2::xml_text(xml2::xml_find_all(xml, "//text:p"))
+	
+	txt <- txt[!grepl("^\\s*$", txt)] # Remove text which is just whitespace
+	txt <- paste0(txt, collapse = "\n")
+	
+	data.frame(text = txt, stringsAsFactors = FALSE)
+}
+
 get_docx <- function(path, source, ...) {
     path <- extract_archive(path, ignore_missing = FALSE)
     path <- sub("/\\*$", "", path)
@@ -206,6 +220,13 @@ get_doc <- function(path, source, ...) {
     data.frame(text = txt, stringsAsFactors = FALSE)
 }
 
+get_rtf <- function(path, source, ...) {
+    path <- normalizePath(path)
+    txt <- striprtf::read_rtf(as.character(path))
+    txt <- paste0(txt, collapse = "\n")
+    txt <- trimws(txt)
+    data.frame(text = txt, stringsAsFactors = FALSE)
+}
 
 get_excel <- function(path, text_field, source, ...) {
 
@@ -245,7 +266,7 @@ xml2_to_dataframe <- function(xml) {
         }
     }
     if (depth_check(xml_list[[1]]) != 3) {
-        stop("The xml format does not fit for the extraxtion without xPath\n  Use xPath method instead")
+        stop("The xml format does not fit for the extraction without xPath\n  Use xPath method instead")
     }
     ret <- data.table::rbindlist(xml_list[[1]], fill = TRUE)
     data.table::setDF(ret)
