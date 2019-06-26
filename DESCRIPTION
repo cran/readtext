@@ -1,5 +1,5 @@
 Package: readtext
-Version: 0.74
+Version: 0.75
 Type: Package
 Title: Import and Handling for Plain and Formatted Text Files
 Authors@R: c( person("Kenneth", "Benoit", email = "kbenoit@lse.ac.uk", role =
@@ -25,7 +25,7 @@ LazyData: TRUE
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2019-05-08 09:59:48 UTC; kbenoit
+Packaged: 2019-06-25 16:33:33 UTC; kbenoit
 Author: Kenneth Benoit [aut, cre, cph],
   Adam Obeng [aut],
   Kohei Watanabe [ctb],
@@ -34,4 +34,4 @@ Author: Kenneth Benoit [aut, cre, cph],
   Stefan Müller [ctb]
 Maintainer: Kenneth Benoit <kbenoit@lse.ac.uk>
 Repository: CRAN
-Date/Publication: 2019-05-08 10:20:20 UTC
+Date/Publication: 2019-06-26 09:30:03 UTC

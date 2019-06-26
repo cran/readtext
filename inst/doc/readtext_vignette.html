@@ -399,7 +399,7 @@ color: #b44;
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Read in all files from a folder</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">readtext</span>(<span class="kw">paste0</span>(DATA_DIR, <span class="st">&quot;/txt/UDHR/*&quot;</span>))</a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="co">## readtext object consisting of 13 documents and 0 docvars.</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="co">## # Description: data.frame [13 × 2]</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">## # Description: df[,2] [13 × 2]</span></a>
 <a class="sourceLine" id="cb3-5" title="5"><span class="co">##   doc_id            text                         </span></a>
 <a class="sourceLine" id="cb3-6" title="6"><span class="co">##   &lt;chr&gt;             &lt;chr&gt;                        </span></a>
 <a class="sourceLine" id="cb3-7" title="7"><span class="co">## 1 UDHR_chinese.txt  &quot;\&quot;世界人权宣言\n联合国\&quot;...&quot;</span></a>
@@ -417,7 +417,7 @@ color: #b44;
 <a class="sourceLine" id="cb4-5" title="5">         <span class="dt">dvsep =</span> <span class="st">&quot;_&quot;</span>, </a>
 <a class="sourceLine" id="cb4-6" title="6">         <span class="dt">encoding =</span> <span class="st">&quot;ISO-8859-1&quot;</span>)</a>
 <a class="sourceLine" id="cb4-7" title="7"><span class="co">## readtext object consisting of 17 documents and 5 docvars.</span></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="co">## # Description: data.frame [17 × 7]</span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="co">## # Description: df[,7] [17 × 7]</span></a>
 <a class="sourceLine" id="cb4-9" title="9"><span class="co">##   doc_id               text              unit  context  year language party</span></a>
 <a class="sourceLine" id="cb4-10" title="10"><span class="co">##   &lt;chr&gt;                &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;</span></a>
 <a class="sourceLine" id="cb4-11" title="11"><span class="co">## 1 EU_euro_2004_de_PSE… &quot;\&quot;PES · PSE \&quot;.… EU    euro     2004 de       PSE  </span></a>
@@ -431,7 +431,7 @@ color: #b44;
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Recurse through subdirectories</span></a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="kw">readtext</span>(<span class="kw">paste0</span>(DATA_DIR, <span class="st">&quot;/txt/movie_reviews/*&quot;</span>))</a>
 <a class="sourceLine" id="cb5-3" title="3"><span class="co">## readtext object consisting of 10 documents and 0 docvars.</span></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="co">## # Description: data.frame [10 × 2]</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">## # Description: df[,2] [10 × 2]</span></a>
 <a class="sourceLine" id="cb5-5" title="5"><span class="co">##   doc_id              text                </span></a>
 <a class="sourceLine" id="cb5-6" title="6"><span class="co">##   &lt;chr&gt;               &lt;chr&gt;               </span></a>
 <a class="sourceLine" id="cb5-7" title="7"><span class="co">## 1 neg_cv000_29416.txt &quot;\&quot;plot : two\&quot;...&quot; </span></a>
@@ -448,7 +448,7 @@ color: #b44;
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Read in comma-separated values</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw">readtext</span>(<span class="kw">paste0</span>(DATA_DIR, <span class="st">&quot;/csv/inaugCorpus.csv&quot;</span>), <span class="dt">text_field =</span> <span class="st">&quot;texts&quot;</span>)</a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="co">## readtext object consisting of 5 documents and 3 docvars.</span></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="co">## # Description: data.frame [5 × 5]</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="co">## # Description: df[,5] [5 × 5]</span></a>
 <a class="sourceLine" id="cb6-5" title="5"><span class="co">##   doc_id            text                 Year President  FirstName</span></a>
 <a class="sourceLine" id="cb6-6" title="6"><span class="co">##   &lt;chr&gt;             &lt;chr&gt;               &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;    </span></a>
 <a class="sourceLine" id="cb6-7" title="7"><span class="co">## 1 inaugCorpus.csv.1 &quot;\&quot;Fellow-Cit\&quot;...&quot;  1789 Washington George   </span></a>
@@ -460,7 +460,7 @@ color: #b44;
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># Read in tab-separated values</span></a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="kw">readtext</span>(<span class="kw">paste0</span>(DATA_DIR, <span class="st">&quot;/tsv/dailsample.tsv&quot;</span>), <span class="dt">text_field =</span> <span class="st">&quot;speech&quot;</span>)</a>
 <a class="sourceLine" id="cb7-3" title="3"><span class="co">## readtext object consisting of 33 documents and 9 docvars.</span></a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="co">## # Description: data.frame [33 × 11]</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="co">## # Description: df[,11] [33 × 11]</span></a>
 <a class="sourceLine" id="cb7-5" title="5"><span class="co">##   doc_id text  speechID memberID partyID constID title date  member_name</span></a>
 <a class="sourceLine" id="cb7-6" title="6"><span class="co">##   &lt;chr&gt;  &lt;chr&gt;    &lt;int&gt;    &lt;int&gt;   &lt;int&gt;   &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      </span></a>
 <a class="sourceLine" id="cb7-7" title="7"><span class="co">## 1 dails… &quot;\&quot;M…        1      977      22     158 1. C… 1919… Count Geor…</span></a>
@@ -478,7 +478,7 @@ color: #b44;
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="co">## Read in JSON data</span></a>
 <a class="sourceLine" id="cb8-2" title="2"><span class="kw">readtext</span>(<span class="kw">paste0</span>(DATA_DIR, <span class="st">&quot;/json/inaugural_sample.json&quot;</span>), <span class="dt">text_field =</span> <span class="st">&quot;texts&quot;</span>)</a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="co">## readtext object consisting of 3 documents and 3 docvars.</span></a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="co">## # Description: data.frame [3 × 5]</span></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="co">## # Description: df[,5] [3 × 5]</span></a>
 <a class="sourceLine" id="cb8-5" title="5"><span class="co">##   doc_id                  text                 Year President  FirstName</span></a>
 <a class="sourceLine" id="cb8-6" title="6"><span class="co">##   &lt;chr&gt;                   &lt;chr&gt;               &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;    </span></a>
 <a class="sourceLine" id="cb8-7" title="7"><span class="co">## 1 inaugural_sample.json.1 &quot;\&quot;Fellow-Cit\&quot;...&quot;  1789 Washington George   </span></a>
@@ -495,7 +495,7 @@ color: #b44;
 <a class="sourceLine" id="cb9-4" title="4">                    <span class="dt">docvarnames =</span> <span class="kw">c</span>(<span class="st">&quot;document&quot;</span>, <span class="st">&quot;language&quot;</span>),</a>
 <a class="sourceLine" id="cb9-5" title="5">                    <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>))</a>
 <a class="sourceLine" id="cb9-6" title="6"><span class="co">## readtext object consisting of 11 documents and 2 docvars.</span></a>
-<a class="sourceLine" id="cb9-7" title="7"><span class="co">## # Description: data.frame [11 × 4]</span></a>
+<a class="sourceLine" id="cb9-7" title="7"><span class="co">## # Description: df[,4] [11 × 4]</span></a>
 <a class="sourceLine" id="cb9-8" title="8"><span class="co">##   doc_id           text                          document language</span></a>
 <a class="sourceLine" id="cb9-9" title="9"><span class="co">##   &lt;chr&gt;            &lt;chr&gt;                         &lt;chr&gt;    &lt;chr&gt;   </span></a>
 <a class="sourceLine" id="cb9-10" title="10"><span class="co">## 1 UDHR_chinese.pdf &quot;\&quot;世界人权宣言\n联合国\&quot;...&quot; UDHR     chinese </span></a>
@@ -512,7 +512,7 @@ color: #b44;
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co">## Read in Word data (.docx)</span></a>
 <a class="sourceLine" id="cb10-2" title="2"><span class="kw">readtext</span>(<span class="kw">paste0</span>(DATA_DIR, <span class="st">&quot;/word/*.docx&quot;</span>))</a>
 <a class="sourceLine" id="cb10-3" title="3"><span class="co">## readtext object consisting of 2 documents and 0 docvars.</span></a>
-<a class="sourceLine" id="cb10-4" title="4"><span class="co">## # Description: data.frame [2 × 2]</span></a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="co">## # Description: df[,2] [2 × 2]</span></a>
 <a class="sourceLine" id="cb10-5" title="5"><span class="co">##   doc_id                      text               </span></a>
 <a class="sourceLine" id="cb10-6" title="6"><span class="co">##   &lt;chr&gt;                       &lt;chr&gt;              </span></a>
 <a class="sourceLine" id="cb10-7" title="7"><span class="co">## 1 UK_2015_EccentricParty.docx &quot;\&quot;The Eccent\&quot;...&quot;</span></a>
@@ -550,8 +550,8 @@ color: #b44;
 <a class="sourceLine" id="cb14-13" title="13"><span class="co">##  inaugCorpus.csv.4   717   1927        41 1801  Jefferson    Thomas</span></a>
 <a class="sourceLine" id="cb14-14" title="14"><span class="co">##  inaugCorpus.csv.5   804   2381        45 1805  Jefferson    Thomas</span></a>
 <a class="sourceLine" id="cb14-15" title="15"><span class="co">## </span></a>
-<a class="sourceLine" id="cb14-16" title="16"><span class="co">## Source: /private/var/folders/1v/ps2x_tvd0yg0lypdlshg_vwc0000gp/T/RtmpiAotoG/Rbuildbdd3ea5de92/readtext/vignettes/* on x86_64 by kbenoit</span></a>
-<a class="sourceLine" id="cb14-17" title="17"><span class="co">## Created: Wed May  8 19:59:46 2019</span></a>
+<a class="sourceLine" id="cb14-16" title="16"><span class="co">## Source: /private/var/folders/1v/ps2x_tvd0yg0lypdlshg_vwc0000gp/T/RtmpgXgo0R/Rbuild109d365d119b4/readtext/vignettes/* on x86_64 by kbenoit</span></a>
+<a class="sourceLine" id="cb14-17" title="17"><span class="co">## Created: Tue Jun 25 17:33:31 2019</span></a>
 <a class="sourceLine" id="cb14-18" title="18"><span class="co">## Notes:</span></a></code></pre></div>
 </div>
 <div id="solving-common-problems" class="section level1">
@@ -640,7 +640,7 @@ color: #b44;
 <a class="sourceLine" id="cb20-4" title="4">                 <span class="dt">docvarnames =</span> <span class="kw">c</span>(<span class="st">&quot;document&quot;</span>, <span class="st">&quot;language&quot;</span>, <span class="st">&quot;input_encoding&quot;</span>))</a>
 <a class="sourceLine" id="cb20-5" title="5"><span class="kw">print</span>(txts, <span class="dt">n =</span> <span class="dv">50</span>)</a>
 <a class="sourceLine" id="cb20-6" title="6"><span class="co">## readtext object consisting of 36 documents and 3 docvars.</span></a>
-<a class="sourceLine" id="cb20-7" title="7"><span class="co">## # Description: data.frame [36 × 5]</span></a>
+<a class="sourceLine" id="cb20-7" title="7"><span class="co">## # Description: df[,5] [36 × 5]</span></a>
 <a class="sourceLine" id="cb20-8" title="8"><span class="co">##    doc_id               text              document  language input_encoding</span></a>
 <a class="sourceLine" id="cb20-9" title="9"><span class="co">##    &lt;chr&gt;                &lt;chr&gt;             &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;         </span></a>
 <a class="sourceLine" id="cb20-10" title="10"><span class="co">##  1 IndianTreaty_Englis… &quot;\&quot;WHEREAS, t\&quot;.… IndianTr… English  UTF-16LE      </span></a>
@@ -697,8 +697,8 @@ color: #b44;
 <a class="sourceLine" id="cb21-15" title="15"><span class="co">##    Arabic          UTF-8</span></a>
 <a class="sourceLine" id="cb21-16" title="16"><span class="co">##    Arabic   WINDOWS-1256</span></a>
 <a class="sourceLine" id="cb21-17" title="17"><span class="co">## </span></a>
-<a class="sourceLine" id="cb21-18" title="18"><span class="co">## Source: /private/var/folders/1v/ps2x_tvd0yg0lypdlshg_vwc0000gp/T/RtmpiAotoG/Rbuildbdd3ea5de92/readtext/vignettes/* on x86_64 by kbenoit</span></a>
-<a class="sourceLine" id="cb21-19" title="19"><span class="co">## Created: Wed May  8 19:59:47 2019</span></a>
+<a class="sourceLine" id="cb21-18" title="18"><span class="co">## Source: /private/var/folders/1v/ps2x_tvd0yg0lypdlshg_vwc0000gp/T/RtmpgXgo0R/Rbuild109d365d119b4/readtext/vignettes/* on x86_64 by kbenoit</span></a>
+<a class="sourceLine" id="cb21-19" title="19"><span class="co">## Created: Tue Jun 25 17:33:32 2019</span></a>
 <a class="sourceLine" id="cb21-20" title="20"><span class="co">## Notes:</span></a></code></pre></div>
 </div>
 </div>
