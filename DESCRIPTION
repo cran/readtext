@@ -1,5 +1,5 @@
 Package: readtext
-Version: 0.75
+Version: 0.76
 Type: Package
 Title: Import and Handling for Plain and Formatted Text Files
 Authors@R: c( person("Kenneth", "Benoit", email = "kbenoit@lse.ac.uk", role =
@@ -23,9 +23,9 @@ Encoding: UTF-8
 BugReports: https://github.com/quanteda/readtext/issues
 LazyData: TRUE
 VignetteBuilder: knitr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 NeedsCompilation: no
-Packaged: 2019-06-25 16:33:33 UTC; kbenoit
+Packaged: 2020-03-04 01:47:22 UTC; kbenoit
 Author: Kenneth Benoit [aut, cre, cph],
   Adam Obeng [aut],
   Kohei Watanabe [ctb],
@@ -34,4 +34,4 @@ Author: Kenneth Benoit [aut, cre, cph],
   Stefan Müller [ctb]
 Maintainer: Kenneth Benoit <kbenoit@lse.ac.uk>
 Repository: CRAN
-Date/Publication: 2019-06-26 09:30:03 UTC
+Date/Publication: 2020-03-04 05:50:02 UTC

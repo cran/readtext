@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
 
@@ -94,7 +94,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -418,14 +418,14 @@ color: #b44;
 <a class="sourceLine" id="cb4-6" title="6">         <span class="dt">encoding =</span> <span class="st">&quot;ISO-8859-1&quot;</span>)</a>
 <a class="sourceLine" id="cb4-7" title="7"><span class="co">## readtext object consisting of 17 documents and 5 docvars.</span></a>
 <a class="sourceLine" id="cb4-8" title="8"><span class="co">## # Description: df[,7] [17 × 7]</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="co">##   doc_id               text              unit  context  year language party</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="co">##   &lt;chr&gt;                &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;</span></a>
-<a class="sourceLine" id="cb4-11" title="11"><span class="co">## 1 EU_euro_2004_de_PSE… &quot;\&quot;PES · PSE \&quot;.… EU    euro     2004 de       PSE  </span></a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="co">## 2 EU_euro_2004_de_V.t… &quot;\&quot;Gemeinsame\&quot;.… EU    euro     2004 de       V    </span></a>
-<a class="sourceLine" id="cb4-13" title="13"><span class="co">## 3 EU_euro_2004_en_PSE… &quot;\&quot;PES · PSE \&quot;.… EU    euro     2004 en       PSE  </span></a>
-<a class="sourceLine" id="cb4-14" title="14"><span class="co">## 4 EU_euro_2004_en_V.t… &quot;\&quot;Manifesto\n\&quot;… EU    euro     2004 en       V    </span></a>
-<a class="sourceLine" id="cb4-15" title="15"><span class="co">## 5 EU_euro_2004_es_PSE… &quot;\&quot;PES · PSE \&quot;.… EU    euro     2004 es       PSE  </span></a>
-<a class="sourceLine" id="cb4-16" title="16"><span class="co">## 6 EU_euro_2004_es_V.t… &quot;\&quot;Manifesto\n\&quot;… EU    euro     2004 es       V    </span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">##   doc_id                  text                unit  context  year language party</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="co">##   &lt;chr&gt;                   &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="co">## 1 EU_euro_2004_de_PSE.txt &quot;\&quot;PES · PSE \&quot;...&quot; EU    euro     2004 de       PSE  </span></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="co">## 2 EU_euro_2004_de_V.txt   &quot;\&quot;Gemeinsame\&quot;...&quot; EU    euro     2004 de       V    </span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co">## 3 EU_euro_2004_en_PSE.txt &quot;\&quot;PES · PSE \&quot;...&quot; EU    euro     2004 en       PSE  </span></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="co">## 4 EU_euro_2004_en_V.txt   &quot;\&quot;Manifesto\n\&quot;..… EU    euro     2004 en       V    </span></a>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co">## 5 EU_euro_2004_es_PSE.txt &quot;\&quot;PES · PSE \&quot;...&quot; EU    euro     2004 es       PSE  </span></a>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co">## 6 EU_euro_2004_es_V.txt   &quot;\&quot;Manifesto\n\&quot;..… EU    euro     2004 es       V    </span></a>
 <a class="sourceLine" id="cb4-17" title="17"><span class="co">## # … with 11 more rows</span></a></code></pre></div>
 <p><strong>readtext</strong> can also curse through subdirectories. In our example, the folder <code>txt/movie_reviews</code> contains two subfolders (called <code>neg</code> and <code>pos</code>). We can load all texts included in both folders.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Recurse through subdirectories</span></a>
@@ -469,8 +469,7 @@ color: #b44;
 <a class="sourceLine" id="cb7-10" title="10"><span class="co">## 4 dails… &quot;\&quot;T…        4      116      22     178 2. C… 1919… Mr. Cathal…</span></a>
 <a class="sourceLine" id="cb7-11" title="11"><span class="co">## 5 dails… &quot;\&quot;L…        5      116      22     178 3. A… 1919… Mr. Cathal…</span></a>
 <a class="sourceLine" id="cb7-12" title="12"><span class="co">## 6 dails… &quot;\&quot;-…        6      116      22     178 3. A… 1919… Mr. Cathal…</span></a>
-<a class="sourceLine" id="cb7-13" title="13"><span class="co">## # … with 27 more rows, and 2 more variables: party_name &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb7-14" title="14"><span class="co">## #   const_name &lt;chr&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-13" title="13"><span class="co">## # … with 27 more rows, and 2 more variables: party_name &lt;chr&gt;, const_name &lt;chr&gt;</span></a></code></pre></div>
 </div>
 <div id="json-data-.json" class="section level2">
 <h2>2.3 JSON data (.json)</h2>
@@ -544,15 +543,11 @@ color: #b44;
 <a class="sourceLine" id="cb14-7" title="7"><span class="co">## Corpus consisting of 5 documents, showing 5 documents:</span></a>
 <a class="sourceLine" id="cb14-8" title="8"><span class="co">## </span></a>
 <a class="sourceLine" id="cb14-9" title="9"><span class="co">##               Text Types Tokens Sentences Year  President FirstName</span></a>
-<a class="sourceLine" id="cb14-10" title="10"><span class="co">##  inaugCorpus.csv.1   625   1540        23 1789 Washington    George</span></a>
+<a class="sourceLine" id="cb14-10" title="10"><span class="co">##  inaugCorpus.csv.1   625   1539        23 1789 Washington    George</span></a>
 <a class="sourceLine" id="cb14-11" title="11"><span class="co">##  inaugCorpus.csv.2    96    147         4 1793 Washington    George</span></a>
-<a class="sourceLine" id="cb14-12" title="12"><span class="co">##  inaugCorpus.csv.3   826   2578        37 1797      Adams      John</span></a>
-<a class="sourceLine" id="cb14-13" title="13"><span class="co">##  inaugCorpus.csv.4   717   1927        41 1801  Jefferson    Thomas</span></a>
-<a class="sourceLine" id="cb14-14" title="14"><span class="co">##  inaugCorpus.csv.5   804   2381        45 1805  Jefferson    Thomas</span></a>
-<a class="sourceLine" id="cb14-15" title="15"><span class="co">## </span></a>
-<a class="sourceLine" id="cb14-16" title="16"><span class="co">## Source: /private/var/folders/1v/ps2x_tvd0yg0lypdlshg_vwc0000gp/T/RtmpgXgo0R/Rbuild109d365d119b4/readtext/vignettes/* on x86_64 by kbenoit</span></a>
-<a class="sourceLine" id="cb14-17" title="17"><span class="co">## Created: Tue Jun 25 17:33:31 2019</span></a>
-<a class="sourceLine" id="cb14-18" title="18"><span class="co">## Notes:</span></a></code></pre></div>
+<a class="sourceLine" id="cb14-12" title="12"><span class="co">##  inaugCorpus.csv.3   826   2577        37 1797      Adams      John</span></a>
+<a class="sourceLine" id="cb14-13" title="13"><span class="co">##  inaugCorpus.csv.4   717   1923        41 1801  Jefferson    Thomas</span></a>
+<a class="sourceLine" id="cb14-14" title="14"><span class="co">##  inaugCorpus.csv.5   804   2380        45 1805  Jefferson    Thomas</span></a></code></pre></div>
 </div>
 <div id="solving-common-problems" class="section level1">
 <h1>4. Solving common problems</h1>
@@ -612,26 +607,23 @@ color: #b44;
 <a class="sourceLine" id="cb19-2" title="2">filenames &lt;-<span class="st"> </span><span class="kw">list.files</span>(FILEDIR, <span class="st">&quot;^(Indian|UDHR_).*</span><span class="ch">\\</span><span class="st">.txt$&quot;</span>)</a>
 <a class="sourceLine" id="cb19-3" title="3"></a>
 <a class="sourceLine" id="cb19-4" title="4"><span class="kw">head</span>(filenames)</a>
-<a class="sourceLine" id="cb19-5" title="5"><span class="co">## [1] &quot;IndianTreaty_English_UTF-16LE.txt&quot; </span></a>
-<a class="sourceLine" id="cb19-6" title="6"><span class="co">## [2] &quot;IndianTreaty_English_UTF-8-BOM.txt&quot;</span></a>
-<a class="sourceLine" id="cb19-7" title="7"><span class="co">## [3] &quot;UDHR_Arabic_ISO-8859-6.txt&quot;        </span></a>
-<a class="sourceLine" id="cb19-8" title="8"><span class="co">## [4] &quot;UDHR_Arabic_UTF-8.txt&quot;             </span></a>
-<a class="sourceLine" id="cb19-9" title="9"><span class="co">## [5] &quot;UDHR_Arabic_WINDOWS-1256.txt&quot;      </span></a>
-<a class="sourceLine" id="cb19-10" title="10"><span class="co">## [6] &quot;UDHR_Chinese_GB2312.txt&quot;</span></a>
-<a class="sourceLine" id="cb19-11" title="11"></a>
-<a class="sourceLine" id="cb19-12" title="12"><span class="co"># Strip the extension</span></a>
-<a class="sourceLine" id="cb19-13" title="13">filenames &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;.txt$&quot;</span>, <span class="st">&quot;&quot;</span>, filenames)</a>
-<a class="sourceLine" id="cb19-14" title="14">parts &lt;-<span class="st"> </span><span class="kw">strsplit</span>(filenames, <span class="st">&quot;_&quot;</span>)</a>
-<a class="sourceLine" id="cb19-15" title="15">fileencodings &lt;-<span class="st"> </span><span class="kw">sapply</span>(parts, <span class="st">&quot;[&quot;</span>, <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb19-16" title="16"></a>
-<a class="sourceLine" id="cb19-17" title="17"><span class="kw">head</span>(fileencodings)</a>
-<a class="sourceLine" id="cb19-18" title="18"><span class="co">## [1] &quot;UTF-16LE&quot;     &quot;UTF-8-BOM&quot;    &quot;ISO-8859-6&quot;   &quot;UTF-8&quot;       </span></a>
-<a class="sourceLine" id="cb19-19" title="19"><span class="co">## [5] &quot;WINDOWS-1256&quot; &quot;GB2312&quot;</span></a>
-<a class="sourceLine" id="cb19-20" title="20"></a>
-<a class="sourceLine" id="cb19-21" title="21"><span class="co"># Check whether certain file encodings are not supported</span></a>
-<a class="sourceLine" id="cb19-22" title="22">notAvailableIndex &lt;-<span class="st"> </span><span class="kw">which</span>(<span class="op">!</span>(fileencodings <span class="op">%in%</span><span class="st"> </span><span class="kw">iconvlist</span>()))</a>
-<a class="sourceLine" id="cb19-23" title="23">fileencodings[notAvailableIndex]</a>
-<a class="sourceLine" id="cb19-24" title="24"><span class="co">## [1] &quot;UTF-8-BOM&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb19-5" title="5"><span class="co">## [1] &quot;IndianTreaty_English_UTF-16LE.txt&quot;  &quot;IndianTreaty_English_UTF-8-BOM.txt&quot;</span></a>
+<a class="sourceLine" id="cb19-6" title="6"><span class="co">## [3] &quot;UDHR_Arabic_ISO-8859-6.txt&quot;         &quot;UDHR_Arabic_UTF-8.txt&quot;             </span></a>
+<a class="sourceLine" id="cb19-7" title="7"><span class="co">## [5] &quot;UDHR_Arabic_WINDOWS-1256.txt&quot;       &quot;UDHR_Chinese_GB2312.txt&quot;</span></a>
+<a class="sourceLine" id="cb19-8" title="8"></a>
+<a class="sourceLine" id="cb19-9" title="9"><span class="co"># Strip the extension</span></a>
+<a class="sourceLine" id="cb19-10" title="10">filenames &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;.txt$&quot;</span>, <span class="st">&quot;&quot;</span>, filenames)</a>
+<a class="sourceLine" id="cb19-11" title="11">parts &lt;-<span class="st"> </span><span class="kw">strsplit</span>(filenames, <span class="st">&quot;_&quot;</span>)</a>
+<a class="sourceLine" id="cb19-12" title="12">fileencodings &lt;-<span class="st"> </span><span class="kw">sapply</span>(parts, <span class="st">&quot;[&quot;</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb19-13" title="13"></a>
+<a class="sourceLine" id="cb19-14" title="14"><span class="kw">head</span>(fileencodings)</a>
+<a class="sourceLine" id="cb19-15" title="15"><span class="co">## [1] &quot;UTF-16LE&quot;     &quot;UTF-8-BOM&quot;    &quot;ISO-8859-6&quot;   &quot;UTF-8&quot;        &quot;WINDOWS-1256&quot;</span></a>
+<a class="sourceLine" id="cb19-16" title="16"><span class="co">## [6] &quot;GB2312&quot;</span></a>
+<a class="sourceLine" id="cb19-17" title="17"></a>
+<a class="sourceLine" id="cb19-18" title="18"><span class="co"># Check whether certain file encodings are not supported</span></a>
+<a class="sourceLine" id="cb19-19" title="19">notAvailableIndex &lt;-<span class="st"> </span><span class="kw">which</span>(<span class="op">!</span>(fileencodings <span class="op">%in%</span><span class="st"> </span><span class="kw">iconvlist</span>()))</a>
+<a class="sourceLine" id="cb19-20" title="20">fileencodings[notAvailableIndex]</a>
+<a class="sourceLine" id="cb19-21" title="21"><span class="co">## [1] &quot;UTF-8-BOM&quot;</span></a></code></pre></div>
 <p>If we read the text files without specifying the encoding, we get erroneously formatted text. To avoid this, we determine the <code>encoding</code> using the character object <code>fileencoding</code> created above.</p>
 <p>We can also add <code>docvars</code> based on the filenames.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">txts &lt;-<span class="st"> </span><span class="kw">readtext</span>(<span class="kw">paste0</span>(DATA_DIR, <span class="st">&quot;/data_files_encodedtexts.zip&quot;</span>), </a>
@@ -641,52 +633,52 @@ color: #b44;
 <a class="sourceLine" id="cb20-5" title="5"><span class="kw">print</span>(txts, <span class="dt">n =</span> <span class="dv">50</span>)</a>
 <a class="sourceLine" id="cb20-6" title="6"><span class="co">## readtext object consisting of 36 documents and 3 docvars.</span></a>
 <a class="sourceLine" id="cb20-7" title="7"><span class="co">## # Description: df[,5] [36 × 5]</span></a>
-<a class="sourceLine" id="cb20-8" title="8"><span class="co">##    doc_id               text              document  language input_encoding</span></a>
-<a class="sourceLine" id="cb20-9" title="9"><span class="co">##    &lt;chr&gt;                &lt;chr&gt;             &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;         </span></a>
-<a class="sourceLine" id="cb20-10" title="10"><span class="co">##  1 IndianTreaty_Englis… &quot;\&quot;WHEREAS, t\&quot;.… IndianTr… English  UTF-16LE      </span></a>
-<a class="sourceLine" id="cb20-11" title="11"><span class="co">##  2 IndianTreaty_Englis… &quot;\&quot;ARTICLE 1.\&quot;.… IndianTr… English  UTF-8-BOM     </span></a>
-<a class="sourceLine" id="cb20-12" title="12"><span class="co">##  3 UDHR_Arabic_ISO-885… &quot;\&quot;الديباجة\nل\&quot;… UDHR      Arabic   ISO-8859-6    </span></a>
-<a class="sourceLine" id="cb20-13" title="13"><span class="co">##  4 UDHR_Arabic_UTF-8.t… &quot;\&quot;الديباجة\nل\&quot;… UDHR      Arabic   UTF-8         </span></a>
-<a class="sourceLine" id="cb20-14" title="14"><span class="co">##  5 UDHR_Arabic_WINDOWS… &quot;\&quot;الديباجة\nل\&quot;… UDHR      Arabic   WINDOWS-1256  </span></a>
-<a class="sourceLine" id="cb20-15" title="15"><span class="co">##  6 UDHR_Chinese_GB2312… &quot;\&quot;世界人权宣言\n联合国\&quot;… UDHR      Chinese  GB2312        </span></a>
-<a class="sourceLine" id="cb20-16" title="16"><span class="co">##  7 UDHR_Chinese_GBK.txt &quot;\&quot;世界人权宣言\n联合国\&quot;… UDHR      Chinese  GBK           </span></a>
-<a class="sourceLine" id="cb20-17" title="17"><span class="co">##  8 UDHR_Chinese_UTF-8.… &quot;\&quot;世界人权宣言\n联合国\&quot;… UDHR      Chinese  UTF-8         </span></a>
-<a class="sourceLine" id="cb20-18" title="18"><span class="co">##  9 UDHR_English_UTF-16… &quot;\&quot;Universal \&quot;.… UDHR      English  UTF-16BE      </span></a>
-<a class="sourceLine" id="cb20-19" title="19"><span class="co">## 10 UDHR_English_UTF-16… &quot;\&quot;Universal \&quot;.… UDHR      English  UTF-16LE      </span></a>
-<a class="sourceLine" id="cb20-20" title="20"><span class="co">## 11 UDHR_English_UTF-8.… &quot;\&quot;Universal \&quot;.… UDHR      English  UTF-8         </span></a>
-<a class="sourceLine" id="cb20-21" title="21"><span class="co">## 12 UDHR_English_WINDOW… &quot;\&quot;Universal \&quot;.… UDHR      English  WINDOWS-1252  </span></a>
-<a class="sourceLine" id="cb20-22" title="22"><span class="co">## 13 UDHR_French_ISO-885… &quot;\&quot;Déclaratio\&quot;.… UDHR      French   ISO-8859-1    </span></a>
-<a class="sourceLine" id="cb20-23" title="23"><span class="co">## 14 UDHR_French_UTF-8.t… &quot;\&quot;Déclaratio\&quot;.… UDHR      French   UTF-8         </span></a>
-<a class="sourceLine" id="cb20-24" title="24"><span class="co">## 15 UDHR_French_WINDOWS… &quot;\&quot;Déclaratio\&quot;.… UDHR      French   WINDOWS-1252  </span></a>
-<a class="sourceLine" id="cb20-25" title="25"><span class="co">## 16 UDHR_German_ISO-885… &quot;\&quot;Die Allgem\&quot;.… UDHR      German   ISO-8859-1    </span></a>
-<a class="sourceLine" id="cb20-26" title="26"><span class="co">## 17 UDHR_German_UTF-8.t… &quot;\&quot;Die Allgem\&quot;.… UDHR      German   UTF-8         </span></a>
-<a class="sourceLine" id="cb20-27" title="27"><span class="co">## 18 UDHR_German_WINDOWS… &quot;\&quot;Die Allgem\&quot;.… UDHR      German   WINDOWS-1252  </span></a>
-<a class="sourceLine" id="cb20-28" title="28"><span class="co">## 19 UDHR_Greek_CP1253.t… &quot;\&quot;ΟΙΚΟΥΜΕΝΙΚ\&quot;.… UDHR      Greek    CP1253        </span></a>
-<a class="sourceLine" id="cb20-29" title="29"><span class="co">## 20 UDHR_Greek_ISO-8859… &quot;\&quot;ΟΙΚΟΥΜΕΝΙΚ\&quot;.… UDHR      Greek    ISO-8859-7    </span></a>
-<a class="sourceLine" id="cb20-30" title="30"><span class="co">## 21 UDHR_Greek_UTF-8.txt &quot;\&quot;ΟΙΚΟΥΜΕΝΙΚ\&quot;.… UDHR      Greek    UTF-8         </span></a>
-<a class="sourceLine" id="cb20-31" title="31"><span class="co">## 22 UDHR_Hindi_UTF-8.txt &quot;\&quot;मानव अधिका\&quot;.… UDHR      Hindi    UTF-8         </span></a>
-<a class="sourceLine" id="cb20-32" title="32"><span class="co">## 23 UDHR_Icelandic_ISO-… &quot;\&quot;Mannréttin\&quot;.… UDHR      Iceland… ISO-8859-1    </span></a>
-<a class="sourceLine" id="cb20-33" title="33"><span class="co">## 24 UDHR_Icelandic_UTF-… &quot;\&quot;Mannréttin\&quot;.… UDHR      Iceland… UTF-8         </span></a>
-<a class="sourceLine" id="cb20-34" title="34"><span class="co">## 25 UDHR_Icelandic_WIND… &quot;\&quot;Mannréttin\&quot;.… UDHR      Iceland… WINDOWS-1252  </span></a>
-<a class="sourceLine" id="cb20-35" title="35"><span class="co">## 26 UDHR_Japanese_CP932… &quot;\&quot;『世界人権宣言』\n \&quot;… UDHR      Japanese CP932         </span></a>
-<a class="sourceLine" id="cb20-36" title="36"><span class="co">## 27 UDHR_Japanese_ISO-2… &quot;\&quot;『世界人権宣言』\n \&quot;… UDHR      Japanese ISO-2022-JP   </span></a>
-<a class="sourceLine" id="cb20-37" title="37"><span class="co">## 28 UDHR_Japanese_UTF-8… &quot;\&quot;『世界人権宣言』\n \&quot;… UDHR      Japanese UTF-8         </span></a>
-<a class="sourceLine" id="cb20-38" title="38"><span class="co">## 29 UDHR_Japanese_WINDO… &quot;\&quot;『世界人権宣言』\n \&quot;… UDHR      Japanese WINDOWS-936   </span></a>
-<a class="sourceLine" id="cb20-39" title="39"><span class="co">## 30 UDHR_Korean_ISO-202… &quot;\&quot;세 계 인 권 선 \&quot;.… UDHR      Korean   ISO-2022-KR   </span></a>
-<a class="sourceLine" id="cb20-40" title="40"><span class="co">## 31 UDHR_Korean_UTF-8.t… &quot;\&quot;세 계 인 권 선 \&quot;.… UDHR      Korean   UTF-8         </span></a>
-<a class="sourceLine" id="cb20-41" title="41"><span class="co">## 32 UDHR_Russian_ISO-88… &quot;\&quot;Всеобщая д\&quot;.… UDHR      Russian  ISO-8859-5    </span></a>
-<a class="sourceLine" id="cb20-42" title="42"><span class="co">## 33 UDHR_Russian_KOI8-R… &quot;\&quot;Всеобщая д\&quot;.… UDHR      Russian  KOI8-R        </span></a>
-<a class="sourceLine" id="cb20-43" title="43"><span class="co">## 34 UDHR_Russian_UTF-8.… &quot;\&quot;Всеобщая д\&quot;.… UDHR      Russian  UTF-8         </span></a>
-<a class="sourceLine" id="cb20-44" title="44"><span class="co">## 35 UDHR_Russian_WINDOW… &quot;\&quot;Всеобщая д\&quot;.… UDHR      Russian  WINDOWS-1251  </span></a>
-<a class="sourceLine" id="cb20-45" title="45"><span class="co">## 36 UDHR_Thai_UTF-8.txt  &quot;\&quot;ปฏิญญาสากล\&quot;.…  UDHR      Thai     UTF-8</span></a></code></pre></div>
+<a class="sourceLine" id="cb20-8" title="8"><span class="co">##    doc_id                 text                document   language input_encoding</span></a>
+<a class="sourceLine" id="cb20-9" title="9"><span class="co">##    &lt;chr&gt;                  &lt;chr&gt;               &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;         </span></a>
+<a class="sourceLine" id="cb20-10" title="10"><span class="co">##  1 IndianTreaty_English_… &quot;\&quot;WHEREAS, t\&quot;...&quot; IndianTre… English  UTF-16LE      </span></a>
+<a class="sourceLine" id="cb20-11" title="11"><span class="co">##  2 IndianTreaty_English_… &quot;\&quot;ARTICLE 1.\&quot;...&quot; IndianTre… English  UTF-8-BOM     </span></a>
+<a class="sourceLine" id="cb20-12" title="12"><span class="co">##  3 UDHR_Arabic_ISO-8859-… &quot;\&quot;الديباجة\nل\&quot;..… UDHR       Arabic   ISO-8859-6    </span></a>
+<a class="sourceLine" id="cb20-13" title="13"><span class="co">##  4 UDHR_Arabic_UTF-8.txt  &quot;\&quot;الديباجة\nل\&quot;..… UDHR       Arabic   UTF-8         </span></a>
+<a class="sourceLine" id="cb20-14" title="14"><span class="co">##  5 UDHR_Arabic_WINDOWS-1… &quot;\&quot;الديباجة\nل\&quot;..… UDHR       Arabic   WINDOWS-1256  </span></a>
+<a class="sourceLine" id="cb20-15" title="15"><span class="co">##  6 UDHR_Chinese_GB2312.t… &quot;\&quot;世界人权宣言\n联合国\&quot;..… UDHR       Chinese  GB2312        </span></a>
+<a class="sourceLine" id="cb20-16" title="16"><span class="co">##  7 UDHR_Chinese_GBK.txt   &quot;\&quot;世界人权宣言\n联合国\&quot;..… UDHR       Chinese  GBK           </span></a>
+<a class="sourceLine" id="cb20-17" title="17"><span class="co">##  8 UDHR_Chinese_UTF-8.txt &quot;\&quot;世界人权宣言\n联合国\&quot;..… UDHR       Chinese  UTF-8         </span></a>
+<a class="sourceLine" id="cb20-18" title="18"><span class="co">##  9 UDHR_English_UTF-16BE… &quot;\&quot;Universal \&quot;...&quot; UDHR       English  UTF-16BE      </span></a>
+<a class="sourceLine" id="cb20-19" title="19"><span class="co">## 10 UDHR_English_UTF-16LE… &quot;\&quot;Universal \&quot;...&quot; UDHR       English  UTF-16LE      </span></a>
+<a class="sourceLine" id="cb20-20" title="20"><span class="co">## 11 UDHR_English_UTF-8.txt &quot;\&quot;Universal \&quot;...&quot; UDHR       English  UTF-8         </span></a>
+<a class="sourceLine" id="cb20-21" title="21"><span class="co">## 12 UDHR_English_WINDOWS-… &quot;\&quot;Universal \&quot;...&quot; UDHR       English  WINDOWS-1252  </span></a>
+<a class="sourceLine" id="cb20-22" title="22"><span class="co">## 13 UDHR_French_ISO-8859-… &quot;\&quot;Déclaratio\&quot;...&quot; UDHR       French   ISO-8859-1    </span></a>
+<a class="sourceLine" id="cb20-23" title="23"><span class="co">## 14 UDHR_French_UTF-8.txt  &quot;\&quot;Déclaratio\&quot;...&quot; UDHR       French   UTF-8         </span></a>
+<a class="sourceLine" id="cb20-24" title="24"><span class="co">## 15 UDHR_French_WINDOWS-1… &quot;\&quot;Déclaratio\&quot;...&quot; UDHR       French   WINDOWS-1252  </span></a>
+<a class="sourceLine" id="cb20-25" title="25"><span class="co">## 16 UDHR_German_ISO-8859-… &quot;\&quot;Die Allgem\&quot;...&quot; UDHR       German   ISO-8859-1    </span></a>
+<a class="sourceLine" id="cb20-26" title="26"><span class="co">## 17 UDHR_German_UTF-8.txt  &quot;\&quot;Die Allgem\&quot;...&quot; UDHR       German   UTF-8         </span></a>
+<a class="sourceLine" id="cb20-27" title="27"><span class="co">## 18 UDHR_German_WINDOWS-1… &quot;\&quot;Die Allgem\&quot;...&quot; UDHR       German   WINDOWS-1252  </span></a>
+<a class="sourceLine" id="cb20-28" title="28"><span class="co">## 19 UDHR_Greek_CP1253.txt  &quot;\&quot;ΟΙΚΟΥΜΕΝΙΚ\&quot;...&quot; UDHR       Greek    CP1253        </span></a>
+<a class="sourceLine" id="cb20-29" title="29"><span class="co">## 20 UDHR_Greek_ISO-8859-7… &quot;\&quot;ΟΙΚΟΥΜΕΝΙΚ\&quot;...&quot; UDHR       Greek    ISO-8859-7    </span></a>
+<a class="sourceLine" id="cb20-30" title="30"><span class="co">## 21 UDHR_Greek_UTF-8.txt   &quot;\&quot;ΟΙΚΟΥΜΕΝΙΚ\&quot;...&quot; UDHR       Greek    UTF-8         </span></a>
+<a class="sourceLine" id="cb20-31" title="31"><span class="co">## 22 UDHR_Hindi_UTF-8.txt   &quot;\&quot;मानव अधिका\&quot;...&quot; UDHR       Hindi    UTF-8         </span></a>
+<a class="sourceLine" id="cb20-32" title="32"><span class="co">## 23 UDHR_Icelandic_ISO-88… &quot;\&quot;Mannréttin\&quot;...&quot; UDHR       Iceland… ISO-8859-1    </span></a>
+<a class="sourceLine" id="cb20-33" title="33"><span class="co">## 24 UDHR_Icelandic_UTF-8.… &quot;\&quot;Mannréttin\&quot;...&quot; UDHR       Iceland… UTF-8         </span></a>
+<a class="sourceLine" id="cb20-34" title="34"><span class="co">## 25 UDHR_Icelandic_WINDOW… &quot;\&quot;Mannréttin\&quot;...&quot; UDHR       Iceland… WINDOWS-1252  </span></a>
+<a class="sourceLine" id="cb20-35" title="35"><span class="co">## 26 UDHR_Japanese_CP932.t… &quot;\&quot;『世界人権宣言』\n \&quot;..… UDHR       Japanese CP932         </span></a>
+<a class="sourceLine" id="cb20-36" title="36"><span class="co">## 27 UDHR_Japanese_ISO-202… &quot;\&quot;『世界人権宣言』\n \&quot;..… UDHR       Japanese ISO-2022-JP   </span></a>
+<a class="sourceLine" id="cb20-37" title="37"><span class="co">## 28 UDHR_Japanese_UTF-8.t… &quot;\&quot;『世界人権宣言』\n \&quot;..… UDHR       Japanese UTF-8         </span></a>
+<a class="sourceLine" id="cb20-38" title="38"><span class="co">## 29 UDHR_Japanese_WINDOWS… &quot;\&quot;『世界人権宣言』\n \&quot;..… UDHR       Japanese WINDOWS-936   </span></a>
+<a class="sourceLine" id="cb20-39" title="39"><span class="co">## 30 UDHR_Korean_ISO-2022-… &quot;\&quot;세 계 인 권 선 \&quot;...… UDHR       Korean   ISO-2022-KR   </span></a>
+<a class="sourceLine" id="cb20-40" title="40"><span class="co">## 31 UDHR_Korean_UTF-8.txt  &quot;\&quot;세 계 인 권 선 \&quot;...… UDHR       Korean   UTF-8         </span></a>
+<a class="sourceLine" id="cb20-41" title="41"><span class="co">## 32 UDHR_Russian_ISO-8859… &quot;\&quot;Всеобщая д\&quot;...&quot; UDHR       Russian  ISO-8859-5    </span></a>
+<a class="sourceLine" id="cb20-42" title="42"><span class="co">## 33 UDHR_Russian_KOI8-R.t… &quot;\&quot;Всеобщая д\&quot;...&quot; UDHR       Russian  KOI8-R        </span></a>
+<a class="sourceLine" id="cb20-43" title="43"><span class="co">## 34 UDHR_Russian_UTF-8.txt &quot;\&quot;Всеобщая д\&quot;...&quot; UDHR       Russian  UTF-8         </span></a>
+<a class="sourceLine" id="cb20-44" title="44"><span class="co">## 35 UDHR_Russian_WINDOWS-… &quot;\&quot;Всеобщая д\&quot;...&quot; UDHR       Russian  WINDOWS-1251  </span></a>
+<a class="sourceLine" id="cb20-45" title="45"><span class="co">## 36 UDHR_Thai_UTF-8.txt    &quot;\&quot;ปฏิญญาสากล\&quot;...&quot;  UDHR       Thai     UTF-8</span></a></code></pre></div>
 <p>From this file we can easily create a <strong>quanteda</strong> <code>corpus</code> object.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1">corpus_txts &lt;-<span class="st"> </span><span class="kw">corpus</span>(txts)</a>
 <a class="sourceLine" id="cb21-2" title="2"><span class="kw">summary</span>(corpus_txts, <span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb21-3" title="3"><span class="co">## Corpus consisting of 36 documents, showing 5 documents:</span></a>
 <a class="sourceLine" id="cb21-4" title="4"><span class="co">## </span></a>
 <a class="sourceLine" id="cb21-5" title="5"><span class="co">##                                Text Types Tokens Sentences     document</span></a>
-<a class="sourceLine" id="cb21-6" title="6"><span class="co">##   IndianTreaty_English_UTF-16LE.txt   618   2578       155 IndianTreaty</span></a>
-<a class="sourceLine" id="cb21-7" title="7"><span class="co">##  IndianTreaty_English_UTF-8-BOM.txt   646   3090       154 IndianTreaty</span></a>
+<a class="sourceLine" id="cb21-6" title="6"><span class="co">##   IndianTreaty_English_UTF-16LE.txt   617   2577       155 IndianTreaty</span></a>
+<a class="sourceLine" id="cb21-7" title="7"><span class="co">##  IndianTreaty_English_UTF-8-BOM.txt   645   3092       154 IndianTreaty</span></a>
 <a class="sourceLine" id="cb21-8" title="8"><span class="co">##          UDHR_Arabic_ISO-8859-6.txt   753   1555        86         UDHR</span></a>
 <a class="sourceLine" id="cb21-9" title="9"><span class="co">##               UDHR_Arabic_UTF-8.txt   753   1555        86         UDHR</span></a>
 <a class="sourceLine" id="cb21-10" title="10"><span class="co">##        UDHR_Arabic_WINDOWS-1256.txt   753   1555        86         UDHR</span></a>
@@ -695,14 +687,13 @@ color: #b44;
 <a class="sourceLine" id="cb21-13" title="13"><span class="co">##   English      UTF-8-BOM</span></a>
 <a class="sourceLine" id="cb21-14" title="14"><span class="co">##    Arabic     ISO-8859-6</span></a>
 <a class="sourceLine" id="cb21-15" title="15"><span class="co">##    Arabic          UTF-8</span></a>
-<a class="sourceLine" id="cb21-16" title="16"><span class="co">##    Arabic   WINDOWS-1256</span></a>
-<a class="sourceLine" id="cb21-17" title="17"><span class="co">## </span></a>
-<a class="sourceLine" id="cb21-18" title="18"><span class="co">## Source: /private/var/folders/1v/ps2x_tvd0yg0lypdlshg_vwc0000gp/T/RtmpgXgo0R/Rbuild109d365d119b4/readtext/vignettes/* on x86_64 by kbenoit</span></a>
-<a class="sourceLine" id="cb21-19" title="19"><span class="co">## Created: Tue Jun 25 17:33:32 2019</span></a>
-<a class="sourceLine" id="cb21-20" title="20"><span class="co">## Notes:</span></a></code></pre></div>
+<a class="sourceLine" id="cb21-16" title="16"><span class="co">##    Arabic   WINDOWS-1256</span></a></code></pre></div>
 </div>
 </div>
 
+
+
+<!-- code folding -->
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
