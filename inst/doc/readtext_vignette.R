@@ -4,7 +4,7 @@ knitr::opts_chunk$set(collapse = TRUE,
 
 ## ----eval=TRUE, message = FALSE-----------------------------------------------
 # Load readtext package
-library(readtext)
+library("readtext")
 
 ## -----------------------------------------------------------------------------
 # Get the data directory from readtext
@@ -56,20 +56,20 @@ readtext(paste0(DATA_DIR, "/word/*.docx"))
 # Note: Archive file required. The only zip archive included in readtext has 
 # different encodings and is difficult to import (see section 4.2).
 
-## ---- message = FALSE---------------------------------------------------------
-require(quanteda)
-
 ## -----------------------------------------------------------------------------
+if (require("quanteda")) {
+
 # read in comma-separated values with readtext
 rt_csv <- readtext(paste0(DATA_DIR, "/csv/inaugCorpus.csv"), text_field = "texts")
 
 # create quanteda corpus
 corpus_csv <- corpus(rt_csv)
 summary(corpus_csv, 5)
+}
 
 ## ---- message = FALSE---------------------------------------------------------
 # Load stringi package
-require(stringi)
+require("stringi")
 
 ## -----------------------------------------------------------------------------
 # Make some text with page numbers
@@ -136,6 +136,8 @@ txts <- readtext(paste0(DATA_DIR, "/data_files_encodedtexts.zip"),
 print(txts, n = 50)
 
 ## -----------------------------------------------------------------------------
+if (require("quanteda")) {
 corpus_txts <- corpus(txts)
 summary(corpus_txts, 5)
+}
 
