@@ -67,7 +67,7 @@ corpus_csv <- corpus(rt_csv)
 summary(corpus_csv, 5)
 }
 
-## ---- message = FALSE---------------------------------------------------------
+## ----message = FALSE----------------------------------------------------------
 # Load stringi package
 require("stringi")
 

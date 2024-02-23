@@ -5,7 +5,7 @@
 
 [![CRAN
 Version](https://www.r-pkg.org/badges/version/readtext)](https://CRAN.R-project.org/package=readtext)
-[![](https://img.shields.io/badge/devel%20version-0.90-royalblue.svg)](https://github.com/quanteda/readtext)
+[![](https://img.shields.io/badge/devel%20version-0.91-royalblue.svg)](https://github.com/quanteda/readtext)
 [![Downloads](https://cranlogs.r-pkg.org/badges/readtext)](https://CRAN.R-project.org/package=readtext)
 [![Total
 Downloads](https://cranlogs.r-pkg.org/badges/grand-total/readtext?color=orange)](https://CRAN.R-project.org/package=readtext)
@@ -51,7 +51,7 @@ functions are handled by the **stringi** package.)
 
     ``` r
     # devtools packaged required to install readtext from Github 
-    devtools::install_github("quanteda/readtext") 
+    remotes::install_github("quanteda/readtext") 
     ```
 
 Linux note: There are a couple of dependencies that may not be available
@@ -78,8 +78,7 @@ assume that it is plain text. The following command, for instance, will
 load in all of the files from the subdirectory `txt/UDHR/`:
 
 ``` r
-require(readtext)
-## Loading required package: readtext
+library("readtext")
 # get the data directory from readtext
 DATA_DIR <- system.file("extdata/", package = "readtext")
 
@@ -139,9 +138,9 @@ library("quanteda")
 ## See https://quanteda.io for tutorials and examples.
 ## 
 ## Attaching package: 'quanteda'
-## The following objects are masked from 'package:readtext':
+## The following object is masked from 'package:readtext':
 ## 
-##     docnames, docvars, texts
+##     texts
 # read in comma-separated values with readtext
 rt_csv <- readtext(paste0(DATA_DIR, "/csv/inaugCorpus.csv"), text_field = "texts")
 # create quanteda corpus
