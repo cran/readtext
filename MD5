@@ -1,4 +1,4 @@
-836e47bb444740dfd922bf1bd03de1a3 *DESCRIPTION
+b29b29eb78c62041aa0aee9d860be2b0 *DESCRIPTION
 2a9aad74ee91f090319822abd90e454a *NAMESPACE
 0340fcb1d7d2b3ea97d40a155ba08e37 *NEWS.md
 82e67223e0d183311e939e72101bc758 *R/data.R
@@ -8,17 +8,18 @@ e85eb081256d8315c17f7ed8e8e0029f *R/get-functions.R
 3ea2f085b4a7ad731b579d9d6b591843 *R/quanteda-methods.R
 e1dcc814843dfa28ba45f6c7b6933543 *R/readtext-methods.R
 a06eb8c3dfa017a417072bbc2e99b40c *R/readtext-package.R
-2290605f9616eec87c8a593de43790f3 *R/readtext.R
+85209f13f87fadde5e580b5ab5a8a8b1 *R/readtext.R
 b348d381c0640f8c63d83443cd0ef02d *R/readtext_options.R
 fdc0008e7361613fd1ef473030326bd6 *R/utils.R
 ae20b98d0ec92f3c945e3a28e7e7f05d *R/zzz.R
-7a2ea792374f1a216551a1e35154c66d *README.md
-b741bc2b2fff5a1a4b1fa68f6c99eb1a *build/vignette.rds
+dc576ddab1cb158870886b6f1e46283e *README.md
+7584dd04a486f24d2213c419f487942c *build/vignette.rds
 c9f29bdb8cd5223a346d3c2a2c71512a *data/data_char_encodedtexts.rda
 d32239bcb673463ab874e80d47fae504 *inst/LICENSE.txt
+1aef25d5ba97798674bb61eff7151a24 *inst/WORDLIST
 9b7ede9e100a80e1fb5e360a59b50ecf *inst/doc/readtext_vignette.R
 efc0ace01769db1aff92c36894bdf703 *inst/doc/readtext_vignette.Rmd
-7db1e669e5a03300ed62e4dbdb7afa14 *inst/doc/readtext_vignette.html
+153459ae97fabb3c96eebb577c6e38cf *inst/doc/readtext_vignette.html
 19b51d415cf3974ebe55ee693cff2aef *inst/extdata/csv/inaugCorpus.csv
 c7c1de428544b4f6951551ae5db03794 *inst/extdata/data_files_encodedtexts.zip
 9ce9a26c657050487faf8578db7bbb89 *inst/extdata/json/inaugural_sample.json
@@ -93,8 +94,8 @@ f25d60023eb7dad2007d685a00b713fd *man/data_char_encodedtexts.Rd
 edb2d0d15cc91c8f0e59db1fcf3cfd7a *man/get_temp.Rd
 19938881cb34aa5896c8d998ec7710ac *man/impute_types.Rd
 543275281289595bfd91568096f1b445 *man/print.readtext.Rd
-1bc839b6c5c50d3daee9b3c651f7722f *man/readtext-package.Rd
-bf930d22d01f93dd81bdebbb71448696 *man/readtext.Rd
+efc4dbc31fb0931b167449cdd8f57e04 *man/readtext-package.Rd
+1c87278b4925d88a3644db8b6e0d94f7 *man/readtext.Rd
 5429b56a481e28709c8c994f2e2780b0 *man/readtext_options.Rd
 8ba9ba6c9ebb817159eebae17aabfc4a *man/sort_fields.Rd
 2f8f34d646f3583e47d31196dc20ac5c *man/texts.Rd
@@ -192,6 +193,7 @@ f16db776b14ac298b602fc7f9d78c1dd *tests/data/xml/tei.xml
 399811c7df066321e59ae3226a80c575 *tests/data/zip/test2.txt
 a26c45bc79bc547ee729aaff97e6aa1f *tests/data/zip/test3.txt
 84fb71f4fbd0e9a65d5588c3c0e1abea *tests/data/zip/test4.txt
+0622a97a2aaa3c342f09636052c2d7f5 *tests/spelling.R
 80df869c10288da5862b32e34d9d298d *tests/testthat.R
 e272d61e00293b8f5d09ef9bea2c809c *tests/testthat/test-encoding.R
 6ff1bfb34b911c6b880a155f48245c49 *tests/testthat/test-nexis.R

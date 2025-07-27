@@ -48,6 +48,7 @@ overflow: visible;
 }
 </style>
 <style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -718,7 +719,7 @@ object.</p>
 <span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="fu">summary</span>(corpus_csv, <span class="dv">5</span>)</span>
 <span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>}</span>
 <span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="do">## Loading required package: quanteda</span></span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="do">## Package version: 3.3.1</span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="do">## Package version: 4.3.1</span></span>
 <span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="do">## Unicode version: 14.0</span></span>
 <span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="do">## ICU version: 71.1</span></span>
 <span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="do">## Parallel computing: 10 of 10 threads used.</span></span>
@@ -731,11 +732,11 @@ object.</p>
 <span id="cb13-21"><a href="#cb13-21" tabindex="-1"></a><span class="do">## Corpus consisting of 5 documents, showing 5 documents:</span></span>
 <span id="cb13-22"><a href="#cb13-22" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb13-23"><a href="#cb13-23" tabindex="-1"></a><span class="do">##               Text Types Tokens Sentences Year  President FirstName</span></span>
-<span id="cb13-24"><a href="#cb13-24" tabindex="-1"></a><span class="do">##  inaugCorpus.csv.1   625   1539        23 1789 Washington    George</span></span>
+<span id="cb13-24"><a href="#cb13-24" tabindex="-1"></a><span class="do">##  inaugCorpus.csv.1   625   1540        23 1789 Washington    George</span></span>
 <span id="cb13-25"><a href="#cb13-25" tabindex="-1"></a><span class="do">##  inaugCorpus.csv.2    96    147         4 1793 Washington    George</span></span>
-<span id="cb13-26"><a href="#cb13-26" tabindex="-1"></a><span class="do">##  inaugCorpus.csv.3   826   2577        37 1797      Adams      John</span></span>
-<span id="cb13-27"><a href="#cb13-27" tabindex="-1"></a><span class="do">##  inaugCorpus.csv.4   717   1923        41 1801  Jefferson    Thomas</span></span>
-<span id="cb13-28"><a href="#cb13-28" tabindex="-1"></a><span class="do">##  inaugCorpus.csv.5   804   2380        45 1805  Jefferson    Thomas</span></span></code></pre></div>
+<span id="cb13-26"><a href="#cb13-26" tabindex="-1"></a><span class="do">##  inaugCorpus.csv.3   826   2578        37 1797      Adams      John</span></span>
+<span id="cb13-27"><a href="#cb13-27" tabindex="-1"></a><span class="do">##  inaugCorpus.csv.4   717   1927        41 1801  Jefferson    Thomas</span></span>
+<span id="cb13-28"><a href="#cb13-28" tabindex="-1"></a><span class="do">##  inaugCorpus.csv.5   804   2381        45 1805  Jefferson    Thomas</span></span></code></pre></div>
 </div>
 <div id="solving-common-problems" class="section level1">
 <h1>4. Solving common problems</h1>
@@ -835,45 +836,45 @@ erroneously formatted text. To avoid this, we determine the
 <span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="fu">print</span>(txts, <span class="at">n =</span> <span class="dv">50</span>)</span>
 <span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a><span class="do">## readtext object consisting of 36 documents and 3 docvars.</span></span>
 <span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a><span class="do">## $text</span></span>
-<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a><span class="do">##  [1] &quot;# A data frame: 36 × 5&quot;                                                             </span></span>
-<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a><span class="do">##  [2] &quot;   doc_id                             text      document language input_encoding&quot;   </span></span>
-<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a><span class="do">##  [3] &quot;   &lt;chr&gt;                              &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;         &quot;   </span></span>
-<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a><span class="do">##  [4] &quot; 1 IndianTreaty_English_UTF-16LE.txt  \&quot;\\\&quot;WHERE… IndianT… English  UTF-16LE      &quot;</span></span>
-<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a><span class="do">##  [5] &quot; 2 IndianTreaty_English_UTF-8-BOM.txt \&quot;\\\&quot;ARTIC… IndianT… English  UTF-8-BOM     &quot;</span></span>
-<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a><span class="do">##  [6] &quot; 3 UDHR_Arabic_ISO-8859-6.txt         \&quot;\\\&quot;الديب… UDHR     Arabic   ISO-8859-6    &quot;</span></span>
-<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a><span class="do">##  [7] &quot; 4 UDHR_Arabic_UTF-8.txt              \&quot;\\\&quot;الديب… UDHR     Arabic   UTF-8         &quot;</span></span>
-<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a><span class="do">##  [8] &quot; 5 UDHR_Arabic_WINDOWS-1256.txt       \&quot;\\\&quot;الديب… UDHR     Arabic   WINDOWS-1256  &quot;</span></span>
-<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a><span class="do">##  [9] &quot; 6 UDHR_Chinese_GB2312.txt            \&quot;\\\&quot;世界…  UDHR     Chinese  GB2312        &quot;</span></span>
-<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a><span class="do">## [10] &quot; 7 UDHR_Chinese_GBK.txt               \&quot;\\\&quot;世界…  UDHR     Chinese  GBK           &quot;</span></span>
-<span id="cb19-18"><a href="#cb19-18" tabindex="-1"></a><span class="do">## [11] &quot; 8 UDHR_Chinese_UTF-8.txt             \&quot;\\\&quot;世界…  UDHR     Chinese  UTF-8         &quot;</span></span>
-<span id="cb19-19"><a href="#cb19-19" tabindex="-1"></a><span class="do">## [12] &quot; 9 UDHR_English_UTF-16BE.txt          \&quot;\\\&quot;Unive… UDHR     English  UTF-16BE      &quot;</span></span>
-<span id="cb19-20"><a href="#cb19-20" tabindex="-1"></a><span class="do">## [13] &quot;10 UDHR_English_UTF-16LE.txt          \&quot;\\\&quot;Unive… UDHR     English  UTF-16LE      &quot;</span></span>
-<span id="cb19-21"><a href="#cb19-21" tabindex="-1"></a><span class="do">## [14] &quot;11 UDHR_English_UTF-8.txt             \&quot;\\\&quot;Unive… UDHR     English  UTF-8         &quot;</span></span>
-<span id="cb19-22"><a href="#cb19-22" tabindex="-1"></a><span class="do">## [15] &quot;12 UDHR_English_WINDOWS-1252.txt      \&quot;\\\&quot;Unive… UDHR     English  WINDOWS-1252  &quot;</span></span>
-<span id="cb19-23"><a href="#cb19-23" tabindex="-1"></a><span class="do">## [16] &quot;13 UDHR_French_ISO-8859-1.txt         \&quot;\\\&quot;Décla… UDHR     French   ISO-8859-1    &quot;</span></span>
-<span id="cb19-24"><a href="#cb19-24" tabindex="-1"></a><span class="do">## [17] &quot;14 UDHR_French_UTF-8.txt              \&quot;\\\&quot;Décla… UDHR     French   UTF-8         &quot;</span></span>
-<span id="cb19-25"><a href="#cb19-25" tabindex="-1"></a><span class="do">## [18] &quot;15 UDHR_French_WINDOWS-1252.txt       \&quot;\\\&quot;Décla… UDHR     French   WINDOWS-1252  &quot;</span></span>
-<span id="cb19-26"><a href="#cb19-26" tabindex="-1"></a><span class="do">## [19] &quot;16 UDHR_German_ISO-8859-1.txt         \&quot;\\\&quot;Die A… UDHR     German   ISO-8859-1    &quot;</span></span>
-<span id="cb19-27"><a href="#cb19-27" tabindex="-1"></a><span class="do">## [20] &quot;17 UDHR_German_UTF-8.txt              \&quot;\\\&quot;Die A… UDHR     German   UTF-8         &quot;</span></span>
-<span id="cb19-28"><a href="#cb19-28" tabindex="-1"></a><span class="do">## [21] &quot;18 UDHR_German_WINDOWS-1252.txt       \&quot;\\\&quot;Die A… UDHR     German   WINDOWS-1252  &quot;</span></span>
-<span id="cb19-29"><a href="#cb19-29" tabindex="-1"></a><span class="do">## [22] &quot;19 UDHR_Greek_CP1253.txt              \&quot;\\\&quot;ΟΙΚΟΥ… UDHR     Greek    CP1253        &quot;</span></span>
-<span id="cb19-30"><a href="#cb19-30" tabindex="-1"></a><span class="do">## [23] &quot;20 UDHR_Greek_ISO-8859-7.txt          \&quot;\\\&quot;ΟΙΚΟΥ… UDHR     Greek    ISO-8859-7    &quot;</span></span>
-<span id="cb19-31"><a href="#cb19-31" tabindex="-1"></a><span class="do">## [24] &quot;21 UDHR_Greek_UTF-8.txt               \&quot;\\\&quot;ΟΙΚΟΥ… UDHR     Greek    UTF-8         &quot;</span></span>
-<span id="cb19-32"><a href="#cb19-32" tabindex="-1"></a><span class="do">## [25] &quot;22 UDHR_Hindi_UTF-8.txt               \&quot;\\\&quot;मानव … UDHR     Hindi    UTF-8         &quot;</span></span>
-<span id="cb19-33"><a href="#cb19-33" tabindex="-1"></a><span class="do">## [26] &quot;23 UDHR_Icelandic_ISO-8859-1.txt      \&quot;\\\&quot;Mannr… UDHR     Iceland… ISO-8859-1    &quot;</span></span>
-<span id="cb19-34"><a href="#cb19-34" tabindex="-1"></a><span class="do">## [27] &quot;24 UDHR_Icelandic_UTF-8.txt           \&quot;\\\&quot;Mannr… UDHR     Iceland… UTF-8         &quot;</span></span>
-<span id="cb19-35"><a href="#cb19-35" tabindex="-1"></a><span class="do">## [28] &quot;25 UDHR_Icelandic_WINDOWS-1252.txt    \&quot;\\\&quot;Mannr… UDHR     Iceland… WINDOWS-1252  &quot;</span></span>
-<span id="cb19-36"><a href="#cb19-36" tabindex="-1"></a><span class="do">## [29] &quot;26 UDHR_Japanese_CP932.txt            \&quot;\\\&quot;『世…  UDHR     Japanese CP932         &quot;</span></span>
-<span id="cb19-37"><a href="#cb19-37" tabindex="-1"></a><span class="do">## [30] &quot;27 UDHR_Japanese_ISO-2022-JP.txt      \&quot;\\\&quot;『世…  UDHR     Japanese ISO-2022-JP   &quot;</span></span>
-<span id="cb19-38"><a href="#cb19-38" tabindex="-1"></a><span class="do">## [31] &quot;28 UDHR_Japanese_UTF-8.txt            \&quot;\\\&quot;『世…  UDHR     Japanese UTF-8         &quot;</span></span>
-<span id="cb19-39"><a href="#cb19-39" tabindex="-1"></a><span class="do">## [32] &quot;29 UDHR_Japanese_WINDOWS-936.txt      \&quot;\\\&quot;『世…  UDHR     Japanese WINDOWS-936   &quot;</span></span>
-<span id="cb19-40"><a href="#cb19-40" tabindex="-1"></a><span class="do">## [33] &quot;30 UDHR_Korean_ISO-2022-KR.txt        \&quot;\\\&quot;세 계… UDHR     Korean   ISO-2022-KR   &quot;</span></span>
-<span id="cb19-41"><a href="#cb19-41" tabindex="-1"></a><span class="do">## [34] &quot;31 UDHR_Korean_UTF-8.txt              \&quot;\\\&quot;세 계… UDHR     Korean   UTF-8         &quot;</span></span>
-<span id="cb19-42"><a href="#cb19-42" tabindex="-1"></a><span class="do">## [35] &quot;32 UDHR_Russian_ISO-8859-5.txt        \&quot;\\\&quot;Всеоб… UDHR     Russian  ISO-8859-5    &quot;</span></span>
-<span id="cb19-43"><a href="#cb19-43" tabindex="-1"></a><span class="do">## [36] &quot;33 UDHR_Russian_KOI8-R.txt            \&quot;\\\&quot;Всеоб… UDHR     Russian  KOI8-R        &quot;</span></span>
-<span id="cb19-44"><a href="#cb19-44" tabindex="-1"></a><span class="do">## [37] &quot;34 UDHR_Russian_UTF-8.txt             \&quot;\\\&quot;Всеоб… UDHR     Russian  UTF-8         &quot;</span></span>
-<span id="cb19-45"><a href="#cb19-45" tabindex="-1"></a><span class="do">## [38] &quot;35 UDHR_Russian_WINDOWS-1251.txt      \&quot;\\\&quot;Всеоб… UDHR     Russian  WINDOWS-1251  &quot;</span></span>
-<span id="cb19-46"><a href="#cb19-46" tabindex="-1"></a><span class="do">## [39] &quot;36 UDHR_Thai_UTF-8.txt                \&quot;\\\&quot;ปฏิญญา… UDHR     Thai     UTF-8         &quot;</span></span>
+<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a><span class="do">##  [1] &quot;# A data frame: 36 × 5&quot;                                                                  </span></span>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a><span class="do">##  [2] &quot;   doc_id                             text      document language input_encoding&quot;        </span></span>
+<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a><span class="do">##  [3] &quot;   &lt;chr&gt;                              &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;         &quot;        </span></span>
+<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a><span class="do">##  [4] &quot; 1 IndianTreaty_English_UTF-16LE.txt  \&quot;\\\&quot;WHERE… IndianT… English  UTF-16LE      &quot;     </span></span>
+<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a><span class="do">##  [5] &quot; 2 IndianTreaty_English_UTF-8-BOM.txt \&quot;\\\&quot;ARTIC… IndianT… English  UTF-8-BOM     &quot;     </span></span>
+<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a><span class="do">##  [6] &quot; 3 UDHR_Arabic_ISO-8859-6.txt         \&quot;\\\&quot;الديب… UDHR     Arabic   ISO-8859-6    &quot;     </span></span>
+<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a><span class="do">##  [7] &quot; 4 UDHR_Arabic_UTF-8.txt              \&quot;\\\&quot;الديب… UDHR     Arabic   UTF-8         &quot;     </span></span>
+<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a><span class="do">##  [8] &quot; 5 UDHR_Arabic_WINDOWS-1256.txt       \&quot;\\\&quot;الديب… UDHR     Arabic   WINDOWS-1256  &quot;     </span></span>
+<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a><span class="do">##  [9] &quot; 6 UDHR_Chinese_GB2312.txt            \&quot;\\\&quot;世界人权宣… UDHR     Chinese  GB2312        &quot;</span></span>
+<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a><span class="do">## [10] &quot; 7 UDHR_Chinese_GBK.txt               \&quot;\\\&quot;世界人权宣… UDHR     Chinese  GBK           &quot;</span></span>
+<span id="cb19-18"><a href="#cb19-18" tabindex="-1"></a><span class="do">## [11] &quot; 8 UDHR_Chinese_UTF-8.txt             \&quot;\\\&quot;世界人权宣… UDHR     Chinese  UTF-8         &quot;</span></span>
+<span id="cb19-19"><a href="#cb19-19" tabindex="-1"></a><span class="do">## [12] &quot; 9 UDHR_English_UTF-16BE.txt          \&quot;\\\&quot;Unive… UDHR     English  UTF-16BE      &quot;     </span></span>
+<span id="cb19-20"><a href="#cb19-20" tabindex="-1"></a><span class="do">## [13] &quot;10 UDHR_English_UTF-16LE.txt          \&quot;\\\&quot;Unive… UDHR     English  UTF-16LE      &quot;     </span></span>
+<span id="cb19-21"><a href="#cb19-21" tabindex="-1"></a><span class="do">## [14] &quot;11 UDHR_English_UTF-8.txt             \&quot;\\\&quot;Unive… UDHR     English  UTF-8         &quot;     </span></span>
+<span id="cb19-22"><a href="#cb19-22" tabindex="-1"></a><span class="do">## [15] &quot;12 UDHR_English_WINDOWS-1252.txt      \&quot;\\\&quot;Unive… UDHR     English  WINDOWS-1252  &quot;     </span></span>
+<span id="cb19-23"><a href="#cb19-23" tabindex="-1"></a><span class="do">## [16] &quot;13 UDHR_French_ISO-8859-1.txt         \&quot;\\\&quot;Décla… UDHR     French   ISO-8859-1    &quot;     </span></span>
+<span id="cb19-24"><a href="#cb19-24" tabindex="-1"></a><span class="do">## [17] &quot;14 UDHR_French_UTF-8.txt              \&quot;\\\&quot;Décla… UDHR     French   UTF-8         &quot;     </span></span>
+<span id="cb19-25"><a href="#cb19-25" tabindex="-1"></a><span class="do">## [18] &quot;15 UDHR_French_WINDOWS-1252.txt       \&quot;\\\&quot;Décla… UDHR     French   WINDOWS-1252  &quot;     </span></span>
+<span id="cb19-26"><a href="#cb19-26" tabindex="-1"></a><span class="do">## [19] &quot;16 UDHR_German_ISO-8859-1.txt         \&quot;\\\&quot;Die A… UDHR     German   ISO-8859-1    &quot;     </span></span>
+<span id="cb19-27"><a href="#cb19-27" tabindex="-1"></a><span class="do">## [20] &quot;17 UDHR_German_UTF-8.txt              \&quot;\\\&quot;Die A… UDHR     German   UTF-8         &quot;     </span></span>
+<span id="cb19-28"><a href="#cb19-28" tabindex="-1"></a><span class="do">## [21] &quot;18 UDHR_German_WINDOWS-1252.txt       \&quot;\\\&quot;Die A… UDHR     German   WINDOWS-1252  &quot;     </span></span>
+<span id="cb19-29"><a href="#cb19-29" tabindex="-1"></a><span class="do">## [22] &quot;19 UDHR_Greek_CP1253.txt              \&quot;\\\&quot;ΟΙΚΟΥ… UDHR     Greek    CP1253        &quot;     </span></span>
+<span id="cb19-30"><a href="#cb19-30" tabindex="-1"></a><span class="do">## [23] &quot;20 UDHR_Greek_ISO-8859-7.txt          \&quot;\\\&quot;ΟΙΚΟΥ… UDHR     Greek    ISO-8859-7    &quot;     </span></span>
+<span id="cb19-31"><a href="#cb19-31" tabindex="-1"></a><span class="do">## [24] &quot;21 UDHR_Greek_UTF-8.txt               \&quot;\\\&quot;ΟΙΚΟΥ… UDHR     Greek    UTF-8         &quot;     </span></span>
+<span id="cb19-32"><a href="#cb19-32" tabindex="-1"></a><span class="do">## [25] &quot;22 UDHR_Hindi_UTF-8.txt               \&quot;\\\&quot;मानव अ… UDHR     Hindi    UTF-8         &quot;    </span></span>
+<span id="cb19-33"><a href="#cb19-33" tabindex="-1"></a><span class="do">## [26] &quot;23 UDHR_Icelandic_ISO-8859-1.txt      \&quot;\\\&quot;Mannr… UDHR     Iceland… ISO-8859-1    &quot;     </span></span>
+<span id="cb19-34"><a href="#cb19-34" tabindex="-1"></a><span class="do">## [27] &quot;24 UDHR_Icelandic_UTF-8.txt           \&quot;\\\&quot;Mannr… UDHR     Iceland… UTF-8         &quot;     </span></span>
+<span id="cb19-35"><a href="#cb19-35" tabindex="-1"></a><span class="do">## [28] &quot;25 UDHR_Icelandic_WINDOWS-1252.txt    \&quot;\\\&quot;Mannr… UDHR     Iceland… WINDOWS-1252  &quot;     </span></span>
+<span id="cb19-36"><a href="#cb19-36" tabindex="-1"></a><span class="do">## [29] &quot;26 UDHR_Japanese_CP932.txt            \&quot;\\\&quot;『世界人権… UDHR     Japanese CP932         &quot;</span></span>
+<span id="cb19-37"><a href="#cb19-37" tabindex="-1"></a><span class="do">## [30] &quot;27 UDHR_Japanese_ISO-2022-JP.txt      \&quot;\\\&quot;『世界人権… UDHR     Japanese ISO-2022-JP   &quot;</span></span>
+<span id="cb19-38"><a href="#cb19-38" tabindex="-1"></a><span class="do">## [31] &quot;28 UDHR_Japanese_UTF-8.txt            \&quot;\\\&quot;『世界人権… UDHR     Japanese UTF-8         &quot;</span></span>
+<span id="cb19-39"><a href="#cb19-39" tabindex="-1"></a><span class="do">## [32] &quot;29 UDHR_Japanese_WINDOWS-936.txt      \&quot;\\\&quot;『世界人権… UDHR     Japanese WINDOWS-936   &quot;</span></span>
+<span id="cb19-40"><a href="#cb19-40" tabindex="-1"></a><span class="do">## [33] &quot;30 UDHR_Korean_ISO-2022-KR.txt        \&quot;\\\&quot;세 계 인… UDHR     Korean   ISO-2022-KR   &quot;  </span></span>
+<span id="cb19-41"><a href="#cb19-41" tabindex="-1"></a><span class="do">## [34] &quot;31 UDHR_Korean_UTF-8.txt              \&quot;\\\&quot;세 계 인… UDHR     Korean   UTF-8         &quot;  </span></span>
+<span id="cb19-42"><a href="#cb19-42" tabindex="-1"></a><span class="do">## [35] &quot;32 UDHR_Russian_ISO-8859-5.txt        \&quot;\\\&quot;Всеоб… UDHR     Russian  ISO-8859-5    &quot;     </span></span>
+<span id="cb19-43"><a href="#cb19-43" tabindex="-1"></a><span class="do">## [36] &quot;33 UDHR_Russian_KOI8-R.txt            \&quot;\\\&quot;Всеоб… UDHR     Russian  KOI8-R        &quot;     </span></span>
+<span id="cb19-44"><a href="#cb19-44" tabindex="-1"></a><span class="do">## [37] &quot;34 UDHR_Russian_UTF-8.txt             \&quot;\\\&quot;Всеоб… UDHR     Russian  UTF-8         &quot;     </span></span>
+<span id="cb19-45"><a href="#cb19-45" tabindex="-1"></a><span class="do">## [38] &quot;35 UDHR_Russian_WINDOWS-1251.txt      \&quot;\\\&quot;Всеоб… UDHR     Russian  WINDOWS-1251  &quot;     </span></span>
+<span id="cb19-46"><a href="#cb19-46" tabindex="-1"></a><span class="do">## [39] &quot;36 UDHR_Thai_UTF-8.txt                \&quot;\\\&quot;ปฏิญญา… UDHR     Thai     UTF-8         &quot;     </span></span>
 <span id="cb19-47"><a href="#cb19-47" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb19-48"><a href="#cb19-48" tabindex="-1"></a><span class="do">## $summary</span></span>
 <span id="cb19-49"><a href="#cb19-49" tabindex="-1"></a><span class="do">## $summary[[1]]</span></span>
@@ -891,8 +892,8 @@ erroneously formatted text. To avoid this, we determine the
 <span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="do">## Corpus consisting of 36 documents, showing 5 documents:</span></span>
 <span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="do">##                                Text Types Tokens Sentences     document</span></span>
-<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a><span class="do">##   IndianTreaty_English_UTF-16LE.txt   618   2577       152 IndianTreaty</span></span>
-<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a><span class="do">##  IndianTreaty_English_UTF-8-BOM.txt   647   3085       150 IndianTreaty</span></span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a><span class="do">##   IndianTreaty_English_UTF-16LE.txt   619   2578       152 IndianTreaty</span></span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a><span class="do">##  IndianTreaty_English_UTF-8-BOM.txt   646   3090       150 IndianTreaty</span></span>
 <span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a><span class="do">##          UDHR_Arabic_ISO-8859-6.txt   753   1555        86         UDHR</span></span>
 <span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a><span class="do">##               UDHR_Arabic_UTF-8.txt   753   1555        86         UDHR</span></span>
 <span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a><span class="do">##        UDHR_Arabic_WINDOWS-1256.txt   753   1555        86         UDHR</span></span>
